@@ -52,8 +52,6 @@ jobs:
       - name: Collect roll call votes data
         run: |
           ls -a
-          cd congress
-          ls -a
 
       - name: Import data to S3
         run: |
