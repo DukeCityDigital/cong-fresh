@@ -59,6 +59,8 @@ jobs:
         run: |
           ls -al
           cd congress
+          ls -al
+          pwd
           usc-run votes
 
       - name: Set up Python
