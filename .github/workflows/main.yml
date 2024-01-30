@@ -54,10 +54,10 @@ jobs:
           ls -a
           cd congress
           ls -a
-          pwd
-          python run votes
 
       - name: Import data to S3
         run: |
-          cd congress
-          python import_to_s3_script.py
+          pwd
+          python run votes
+          # cd congress
+          # python import_to_s3_script.py
