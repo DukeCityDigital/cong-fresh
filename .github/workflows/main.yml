@@ -56,7 +56,10 @@ jobs:
           repository: unitedstates/congress  # GitHub repository you want to checkout
           ref: main  # Change this to your desired branch
       - name: listfiles
-        run: ls -al
+        run: |
+          ls -al
+          cd congress
+          usc-run votes
 
       - name: Set up Python
         uses: actions/setup-python@v2
