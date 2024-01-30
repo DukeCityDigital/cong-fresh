@@ -49,6 +49,9 @@ jobs:
 #       - name: Check pip
 #         run: pip --version
 
+      - name: checkout repo
+        uses: actions/checkout@v2.3.4
+
       - name: Collect roll call votes data
         run: |
           ls -a
