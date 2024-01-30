@@ -52,6 +52,10 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v2.3.4
 
+      - name: install
+        run: |
+          sudo apt-get install git python3-dev libxml2-dev libxslt1-dev libz-dev python3-pip python3-venv
+
       - name: Collect roll call votes data
         run: |
           ls -a
