@@ -55,6 +55,7 @@ jobs:
 
       - name: Import data to S3
         run: |
+          ls -al
           pwd
           python run.py votes
           # cd congress
