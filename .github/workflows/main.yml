@@ -62,6 +62,8 @@ jobs:
   
       - name: Activate virtual environment
         run: source venv/bin/activate
+      - name: congcommand
+        run: usc-run votes
   
       - name: Install dependencies
         run: |
