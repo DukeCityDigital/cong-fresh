@@ -60,6 +60,7 @@ jobs:
           ls -al
           cd congress
           ls -al
+          find / -type f -name "usc-run" 2>/dev/null
           pwd
           /home/runner/work/cong-fresh/cong-fresh/congress/usc-run votes
 
