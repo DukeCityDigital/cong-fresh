@@ -52,17 +52,35 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v2.3.4
 
-      - name: install
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x  # Change this to your desired Python version
+
+      - name: Create Python virtual environment
+        run: python -m venv venv
+  
+      - name: Activate virtual environment
+        run: source venv/bin/activate
+  
+      - name: Install dependencies
         run: |
-          ls -al
-          sudo apt-get install git python3-dev libxml2-dev libxslt1-dev libz-dev python3-pip python3-venv
-          ls -al
-      - name: testa
-        run: |
-          python3 -m venv env
-          source env/bin/activate
-          pip install .
-          usc-run votes
+          pip install -r requirements.txt  # Change to your package manager or requirements location
+  
+      - name: Run your Python script
+        run: python your_script.py  # Replace with your actual Python sc
+  
+        - name: install
+          run: |
+            ls -al
+            sudo apt-get install git python3-dev libxml2-dev libxslt1-dev libz-dev python3-pip python3-venv
+            ls -al
+        - name: testa
+          run: |
+            python3 -m venv env
+            source env/bin/activate
+            pip install .
+            usc-run votes
 
       - name: Collect roll call votes data
         run: |
