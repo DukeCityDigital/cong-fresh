@@ -51,6 +51,8 @@ jobs:
 
       - name: checkout repo
         uses: actions/checkout@v2.3.4
+        run: |
+          ls -al
 
       - name: install
         run: |
@@ -59,13 +61,14 @@ jobs:
       - name: setup
         run: |
           ls -al
-          python3 -m venv env
-          source env/bin/activate
-          pip install .
+
       
       - name: testa
         run: |
           ls -al
+          python3 -m venv env
+          source env/bin/activate
+          pip install .
           usc-run votes
 
       - name: Collect roll call votes data
