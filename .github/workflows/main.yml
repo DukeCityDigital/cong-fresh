@@ -55,16 +55,22 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.x  # Change this to your desired Python version
-
+          python-version: 3.11  # Change this to your desired Python version
       - name: Create Python virtual environment
         run: python -m venv venv
-      - name: Find usc-run path
-        run: |
-          which usc-run
-  
+      - name: listfiles
+        run: ls -al
       - name: Activate virtual environment
         run: source venv/bin/activate
+      - name: Run usc-run
+        run: /path/to/usc-run votes
+
+
+      # - name: Find usc-run path
+      #   run: |
+      #     which usc-run
+  
+
       - name: congcommand
         run: usc-run votes
   
