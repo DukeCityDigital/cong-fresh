@@ -54,15 +54,18 @@ jobs:
 
       - name: install
         run: |
+          ls -al
           sudo apt-get install git python3-dev libxml2-dev libxslt1-dev libz-dev python3-pip python3-venv
       - name: setup
         run: |
+          ls -al
           python3 -m venv env
           source env/bin/activate
           pip install .
       
       - name: testa
         run: |
+          ls -al
           usc-run votes
 
       - name: Collect roll call votes data
