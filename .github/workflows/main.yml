@@ -49,8 +49,12 @@ jobs:
 #       - name: Check pip
 #         run: pip --version
 
+      
       - name: checkout repo
         uses: actions/checkout@v2.3.4
+        with:
+          repository: unitedstates/congress  # GitHub repository you want to checkout
+          ref: main  # Change this to your desired branch
       - name: listfiles
         run: ls -al
 
