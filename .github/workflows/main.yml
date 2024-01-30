@@ -1,0 +1,62 @@
+name: Roll Call Import
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '*.md'
+      - 'bin/*'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '*.md'
+      - 'bin/*'
+jobs:
+  import:
+    permissions:
+      contents: read
+      id-token: write
+      actions: read
+
+    runs-on:
+      - ubuntu-20.04
+
+    steps:
+#       - name: Checkout Congress Repo
+#         run: git clone https://github.com/shaun-prolegis/congress.git
+# #        run: git clone https://github.com/unitedstates/congress.git
+
+#       - name: Change directory into Congress repo
+#         run: cd congress
+
+#       - name: print working directory
+#         run: pwd
+
+#       - name: list files + directories
+#         run: ls -a
+
+#       - name: Install wget and pip
+#         run: sudo apt-get install git python3-dev libxml2-dev libxslt1-dev libz-dev python3-pip python3-venv
+
+#       - name: Create virtual environment
+#         run: python3 -m venv env
+
+#       - name: Activate environment
+#         run: source env/bin/activate
+
+#       - name: Check pip
+#         run: pip --version
+
+      - name: Collect roll call votes data
+        run: |
+          ls -a
+          cd congress
+          ls -a
+          pwd
+          python run votes
+
+      - name: Import data to S3
+        run: |
+          cd congress
+          python import_to_s3_script.py
