@@ -61,7 +61,7 @@ jobs:
           cd congress
           ls -al
           pwd
-          usc-run votes
+          /home/runner/work/cong-fresh/cong-fresh/congress/usc-run votes
 
       - name: Set up Python
         uses: actions/setup-python@v2
